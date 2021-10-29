@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chad Kalani</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<header>
+		<div>
+			<img src="./images/duck.jpg" alt="logo">
+		</div>
+		<nav>
+			<ul>
+				<li>About</li>
+				<li>Skills</li>
+				<li>Work</li>
+				<li>Contact</li>
+			</ul>
+		</nav>
+	</header>
+	<section class="heroImg">
+		<div class="content">
+			<img src="./images/duck.jpg" alt="Duck">
+			<h1>Tanner Pelkey</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			<button>Download Resume</button>
+		</div>
+		
+	</section>
+	<!--  My UX Skills section coded using CSS flex -->
+	<section class="mySkills">
+		<h1>My UX Skills</h1>
+		<div class="flexContainer">
+			<div>
+				<img src="" alt="">
+				<h4>User Research</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			</div>
+			<div>
+				<img src="" alt="">
+				<h4>User Interface Design</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			</div>
+			<div>
+				<img src="" alt="">
+				<h4>Web Development</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			</div>
+		
+		</div>
+	</section>
+	<!-- My Work Section Constructed using CSS Grid -->
+
+	<section class="myWork">
+		<h1>My Work</h1>
+		<div class="workGrid">
+			<div>
+				<img src="" alt="">
+			</div>
+			<div>
+				<h4>First Project</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+				<button>Click</button>
+			</div>
+			
+			<div>
+				<img src="" alt="">
+			</div>
+			<div>
+				<h4>Second Project</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+				<button>Click</button>
+			</div>
+
+			<div>
+				<img src="" alt="">
+			</div>
+			<div>
+				<h4>Third Project</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+				<button>Click</button>
+			</div>
+		</div>
+		<h3>View all projects</h3>
+	</section>
+	<section id="3d"></section>
+	<footer>
+		<ul>
+			<li>About</li>
+			<li>Skills</li>
+			<li>Work</li>
+			<li>Contact</li>
+		</ul>
+	</footer>
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="./js/main.js"></script>
+	<script src="js/three.js"></script>
+		<script type="module">
+			import * as THREE from 'https://cdn.skypack.dev/three@<version>';
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.querySelector('#3d').appendChild( renderer.domElement );
+
+			const geometry = new THREE.BoxGeometry();
+			const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			const cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+			const animate = function () {
+				requestAnimationFrame( animate );
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+			};
+
+			animate();
+		</script>
+</body>
+</html>
